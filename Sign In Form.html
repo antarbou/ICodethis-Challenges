@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-purple-100 flex justify-center items-center min-h-screen">
+    <div
+        class="bg-white text-[#181028] p-8 space-y-6 shadow-lg rounded-md  w-4/5 @container flex flex-col justify-center items-center space-y-6">
+        <h2 class="text-xl fond-bold mt-4 mb-10">Sign in to your account</h2>
+        <form class="w-4/5 sm:w-2/4">
+            <div class="flex flex-col mb-4">
+                <label for="username">Username or email</label>
+                <input class="outline-none border-2 border- rounded-sm p-1 mt-1 focus:border-blue-400" type="text" name="username" id="username" placeholder="memail@mail.com">
+            </div>
+            <div class="flex flex-col mb-4">
+                <label for="password">Password</label>
+                <input class="outline-none border-2 border- rounded-sm p-1 mt-1 focus:border-blue-400 mb-1" type="password" name="password" id="Password" placeholder="Entre your password">
+
+                <div class="text-sm">
+                    <input name="rememberme" id ="rememberme" type="checkbox" class="checkbox cursor-pointer">
+                    <label for="rememberme" class="text-gray-700 inline-flex items-center tex-center cursor-pointer">
+                      <span>Remember me</span>
+                    </label>
+                    <a href="http://#" class="float-right text-blue-700 font-medium"> Forget Password</a>
+                </div>
+            </div>
+            <button class="w-full bg-blue-700 hover:bg-blue-900 curosr-pointer p-2 text-white rounded-sm shadow shadow-xl">Sign In</button>
+        </form>
+        <p class="mt-10 text-center">Don't have an account? <a href="http://#" class="text-blue-700 font-medium">Sign Up</a></p>
+        <div class="bottom-0 text-xs md:text-md w-3/4">
+            <ul class="flex flex-row justify-between cursor-pointer">
+                <li>Services</li>
+                <li>Privacy Policy</li>
+                <li>Classic</li>
+                <li>@2023 KhaledDev</li>
+            </ul>
+        </div>
+            
+
+    </div>
+</body>
+
+</html>

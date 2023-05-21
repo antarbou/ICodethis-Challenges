@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .table-gap {
+            border-collapse: separate;
+            border-spacing: 2rem;
+        }
+
+        .table-gap td {
+            padding: 1rem;
+        }
+
+        .table-gap td:hover {
+            cursor: pointer;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-[#EFF3FF] flex justify-center items-center min-h-screen">
+    <div
+        class="flex flex-col items-center bg-white text-[#181028] p-8  space-y-6 shadow-xl rounded-xl w-3/4 overflow-hidden">
+    <h1 class="text-3xl font-'Roboto Slab' font-bold mb-6 mt-6">Help Center</h1>
+
+        <div class="w-2/4 relative mb-6">
+            <input type="text" class="outline-none border-2 w-full rounded-full  p-2 pl-10 text-sm focus:border-blue-500 focus:outline-none" placeholder="Search">
+            <div class="absolute inset-y-0 pl-4 flex items-center pointer-events-none">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="gray"
+                    class="w-4 h-4 focus:stroke-bleu-500">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                </svg>
+            </div>
+        </div>
+        <table class="table-auto table-gap w-full text-sm">
+            <tbody>
+                <tr>
+                    <td>Billing and Membership</td>
+                    <td>Managing and Organising</td>
+                    <td>Uploading</td>
+                </tr>
+                <tr>
+                    <td>Uploading</td>
+                    <td>vedio Entreprise</td>
+                    <td>Creators</td>
+                </tr>
+                <tr>
+                    <td>Entreprise</td>
+                    <td>Feature</td>
+                    <td>Sales</td>
+                </tr>
+                <tr>
+                    <td>Embedding and Sharing</td>
+                    <td>FAQs</td>
+                    <td>Developers</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+</body>
+
+</html>
