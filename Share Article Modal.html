@@ -1,0 +1,132 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Add CSS here */
+:root{
+    --bgColor   :#606265;
+    --bgFacebook:#405896;
+    --bgTwitter :#1DA1F2;
+    --bgReddit  :#000000;
+}
+@keyframes smooth {
+  0%    { opacity: 0; }
+  20%   { opacity: 1; }
+  80%   { opacity: 0; }
+  100%  { opacity: 1; }
+}
+.animateOpenDiv{
+animation: OpenAnimation 1s ease-in-out;
+}
+.animationCloseDiv{
+animation: CloseAnimation 1s ease-in-out;
+}
+@keyframes OpenAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes CloseAnimation {
+  100% {
+    opacity:0;
+    transform: translateY(-100px);
+  }
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+  </style>
+  <script>
+    const btnOpen = document.getElementById("openModel");
+const closeButtons = document.querySelectorAll("#close, #closeModel");
+const modelShares = document.getElementById("modelShares");
+
+btnOpen.addEventListener('click', () => {
+    modelShares.classList.remove('hidden');
+    modelShares.classList.remove('animationCloseDiv'); // Remove the closing animation class
+    modelShares.classList.add('animateOpenDiv'); // Apply the opening animation class
+});
+
+closeButtons.forEach((closeButton) => {
+    closeButton.addEventListener('click', () => {
+        modelShares.classList.remove('animateOpenDiv'); // Remove the opening animation class
+        modelShares.classList.add('animationCloseDiv'); // Apply the closing animation class
+        setTimeout(() => {
+            modelShares.classList.add('hidden');
+            modelShares.classList.remove('animationCloseDiv'); // Remove the closing animation class after animation ends
+        }, 1000);
+    });
+});
+
+  </script>
+
+  <!-- [var(--bgFacebook)] -->
+</head>
+
+<body class="bg-[var(--bgColor)] flex justify-center items-center min-h-screen flex items-center justify-center">
+  <button id="openModel" class="absolute bg-blue-400 p-2 rounded-md text-white font-medium cursor-pointer hover:scale-110 transition duration-150 ease-out hover:ease-in">
+    Open Model
+  </button>
+  <div id="modelShares" class="hidden relative bg-white text-[#181028] p-8 space-y-6 shadow-lg rounded-md w-3/4 max-w-md md:max-w-lg">
+    <div id="close"
+      class="absolute right-4 top-4 flex items-center justify-center cursor-pointer hover:bg-blue-400 hover:text-white hover:shadow-lg   w-10 h-10 rounded-full ">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24"
+        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M18 6l-12 12"></path>
+        <path d="M6 6l12 12"></path>
+      </svg>
+    </div>
+    <h1 class="text-xl font-bold text-center">Share this article</h1>
+    <p class="text-center text-sm">If you liked this article share it with your friends.<br>
+        They will thank you later.
+    </p>
+    <div class="flex flex-col gap-4 md:flex-row justify-center items-center">
+      <button class="flex flex-row gap-2 justify-center items-center bg-[var(--bgFacebook)] p-2 text-white rounded-md drop-shadow-xl hover:scale-110 transition duration-150 ease-out hover:ease-in"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook-filled" width="24"
+        height="24" viewBox="0 0 24 24" stroke-width="" stroke="currentColor" fill="none" stroke-linecap="round"
+        stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path
+          d="M18 2a1 1 0 0 1 .993 .883l.007 .117v4a1 1 0 0 1 -.883 .993l-.117 .007h-3v1h3a1 1 0 0 1 .991 1.131l-.02 .112l-1 4a1 1 0 0 1 -.858 .75l-.113 .007h-2v6a1 1 0 0 1 -.883 .993l-.117 .007h-4a1 1 0 0 1 -.993 -.883l-.007 -.117v-6h-2a1 1 0 0 1 -.993 -.883l-.007 -.117v-4a1 1 0 0 1 .883 -.993l.117 -.007h2v-1a6 6 0 0 1 5.775 -5.996l.225 -.004h3z"
+          stroke-width="0" fill="currentColor"></path>
+      </svg>Facebook</button>
+  <button class="flex flex-row gap-2 justify-center items-center bg-[var(--bgTwitter)] p-2 text-white rounded-md drop-shadow-xl hover:scale-110 transition duration-150 ease-out hover:ease-in"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter-filled" width="24" height="24"
+    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <path
+      d="M14.058 3.41c-1.807 .767 -2.995 2.453 -3.056 4.38l-.002 .182l-.243 -.023c-2.392 -.269 -4.498 -1.512 -5.944 -3.531a1 1 0 0 0 -1.685 .092l-.097 .186l-.049 .099c-.719 1.485 -1.19 3.29 -1.017 5.203l.03 .273c.283 2.263 1.5 4.215 3.779 5.679l.173 .107l-.081 .043c-1.315 .663 -2.518 .952 -3.827 .9c-1.056 -.04 -1.446 1.372 -.518 1.878c3.598 1.961 7.461 2.566 10.792 1.6c4.06 -1.18 7.152 -4.223 8.335 -8.433l.127 -.495c.238 -.993 .372 -2.006 .401 -3.024l.003 -.332l.393 -.779l.44 -.862l.214 -.434l.118 -.247c.265 -.565 .456 -1.033 .574 -1.43l.014 -.056l.008 -.018c.22 -.593 -.166 -1.358 -.941 -1.358l-.122 .007a.997 .997 0 0 0 -.231 .057l-.086 .038a7.46 7.46 0 0 1 -.88 .36l-.356 .115l-.271 .08l-.772 .214c-1.336 -1.118 -3.144 -1.254 -5.012 -.554l-.211 .084z"
+      stroke-width="0" fill="currentColor"></path>
+  </svg>Twitter</button>
+          <button class="flex flex-row gap-2 justify-center items-center bg-[var(--bgReddit)] p-2 text-white rounded-md drop-shadow-xl hover:scale-110 transition duration-150 ease-out hover:ease-in"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-reddit" width="24" height="24"
+            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path
+              d="M12 8c2.648 0 5.028 .826 6.675 2.14a2.5 2.5 0 0 1 2.326 4.36c0 3.59 -4.03 6.5 -9 6.5c-4.875 0 -8.845 -2.8 -9 -6.294l-1 -.206a2.5 2.5 0 0 1 2.326 -4.36c1.646 -1.313 4.026 -2.14 6.674 -2.14z">
+            </path>
+            <path d="M12 8l1 -5l6 1"></path>
+            <path d="M19 4m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+            <circle cx="9" cy="13" r=".5" fill="currentColor"></circle>
+            <circle cx="15" cy="13" r=".5" fill="currentColor"></circle>
+            <path d="M10 17c.667 .333 1.333 .5 2 .5s1.333 -.167 2 -.5"></path>
+          </svg>Reddit</button>
+    </div>
+    <h3 class="text-center"><strong>4,5</strong> Shares</h3>
+   <div class="flex items-center justify-center"> 
+     <button id="closeModel" class="text-sm text-red-400 hover:scale-110 transition duration-150 ease-out hover:ease-in" href="#">Close this Window</button>
+   </div>
+  </div>
+</body>
+
+</html>
